@@ -21,19 +21,17 @@ https://www.w3schools.com/howto/howto_js_filter_elements.asp -->
     <div id="container">
 
       <!-- Bem-vindo -->
-      <header>
+      <header class="shadow-sm">
         <h1 class="text-center">Bem-vindo a Auto Store</h1>
-        <button class="btn-outline-danger" type="button" onclick="window.open('https://www.w3schools.com/howto/howto_js_filter_elements.asp', 'https://github.com/romeojeremiah/Filter-Project')">Help!</button>
-        <h4 class="text-right pr-4">Escolha o veículo que deseja comprar</h4>
+        <h4 class="text-right pr-4">Selecione seu veículo</h4>
       </header>
 
       <!-- Botões de filtro -->
       <div class="row p-3 mt-5"> 
-        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="todos">todos</button>
+        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="todos">Todos</button>
         <button class="col-2 m-auto btn btn-outline-secondary" data-filter="esportivo">Esportivos</button>
-        <button class="col-2 m-auto btn btn-outline-secondary">Família</button>
-        <button class="col-2 m-auto btn btn-outline-secondary">Velhos</button>
-        <button class="col-2 m-auto btn btn-outline-secondary">Teste</button>
+        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="antigo">Antigos</button>
+        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="caminhonete">Caminhonetes</button>
       </div>
 
 
@@ -49,65 +47,109 @@ https://www.w3schools.com/howto/howto_js_filter_elements.asp -->
       <section id="secao" class="row m-2">
 
         <div class="card m-2 store-item esportivo" style="width: 200px;">
-          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <img src="img/img01.jpg" height="130px" class="card-img-top">
           <div class="card-body">
             <div class="card-title">
               <h4>Camaro v8</h4>
             </div>
             <div class="card-text">
-              R$ 220.000,00
+              R$ 344.000,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card m-2 store-item antigo" style="width: 200px;">
+          <img src="img/img04.jpg" height="130px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Fusca</h4>
+            </div>
+            <div class="card-text">
+              R$ 53.000,00
             </div>
           </div>
         </div>
 
   
         <div class="card m-2 store-item esportivo" style="width: 200px;">
-          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <img src="img/img02.jpg" height="130px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Lamborghini</h4>
+            </div>
+            <div class="card-text">
+              R$ 950.000,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card m-2 store-item antigo" style="width: 200px;">
+          <img src="img/img05.jpg" height="130px" class="card-img-top">
           <div class="card-body">
             <div class="card-title">
               <h4>Kombi</h4>
             </div>
             <div class="card-text">
-              R$ 20.000,00
+              R$ 35.000,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card m-2 store-item caminhonete" style="width: 200px;">
+          <img src="img/img07.jpg" height="130px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>S10</h4>
+            </div>
+            <div class="card-text">
+              R$ 175.000,00
             </div>
           </div>
         </div>
 
   
         <div class="card m-2 store-item esportivo" style="width: 200px;">
-          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <img src="img/img03.jpg" height="130px" class="card-img-top">
           <div class="card-body">
             <div class="card-title">
-              <h4>Camaro v8</h4>
+              <h4>Audi</h4>
             </div>
             <div class="card-text">
-              R$ 220.00,00
+              R$ 190.000,00
+            </div>
+          </div>
+        </div>
+  
+        <div class="card m-2 store-item caminhonete" style="width: 200px;">
+          <img src="img/img08.jpg" height="130px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Ranger</h4>
+            </div>
+            <div class="card-text">
+              R$ 138.000,00
+            </div>
+          </div>
+        </div>
+  
+        <div class="card m-2 store-item antigo" style="width: 200px;">
+          <img src="img/img06.jpg" height="130px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Parati</h4>
+            </div>
+            <div class="card-text">
+              R$ 47.000,00
             </div>
           </div>
         </div>
 
   
-        <div class="card m-2 store-item esportivo" style="width: 200px;">
-          <img src="img01.jpeg" width="25px" class="card-img-top">
-          <div class="card-body">
-            <div class="card-title">
-              <h4>Camaro v8</h4>
-            </div>
-            <div class="card-text">
-              R$ 220.00,00
-            </div>
-          </div>
-        </div>
+      
 
-  
-        <div class="card store-item" style="width: 200px;">
-          Velha Kombi
-          <a href="#">Kombi</a>
-        </div>
-  
-        <div class="card store-item" style="width: 200px;">
-          Família Spin
-        </div>
         
       </section>     
       
