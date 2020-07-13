@@ -1,48 +1,108 @@
-filterSelection("all")
+// Work to get the filter buttons working
+(function(){
+    const buttons = document.querySelectorAll('.btn')
+    const storeItems = document.querySelectorAll('.store-item')
 
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
+    console.log(buttons)
+    
+    buttons.forEach(function(button){
 
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
+        button.addEventListener('click', function(e){
+            console.log('botão pressionado')
 
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
+            //prevent the default link jump to top of page
+            e.preventDefault()
+            //grab the filter button that was clicked
+            const filter = e.target.dataset.filter
 
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+            if (filter === 'todos'){
+                //show all items
+                console.log('Mostrar todos');
+                storeItems.forEach(function(item){
+                    item.style.display = 'block'
+                })
+            } else if (filter === 'esportivo'){
+                storeItems.forEach(function(item){
+                    if (item.classList.contains('esportivo')){
+                        item.style.display = 'block'
+                    } else {
+                        item.style.display = 'none'
+                    }
+                })
+            } else if (filter === 'cupcakes'){
+                storeItems.forEach(function(item){
+                    if (item.classList.contains('cupcakes')){
+                        item.style.display = 'block'
+                    } else {
+                        item.style.display = 'none'
+                    }
+                })
+            } else if (filter === 'sweets'){
+                storeItems.forEach(function(item){
+                    if (item.classList.contains('sweets')){
+                        item.style.display = 'block'
+                    } else {
+                        item.style.display = 'none'
+                    }
+                })
+            } else if (filter === 'doughnuts'){
+                storeItems.forEach(function(item){
+                    if (item.classList.contains('doughnuts')){
+                        item.style.display = 'block'
+                    } else {
+                        item.style.display = 'none'
+                    }
+                })
+            }
+        })
+    })
+
+    // refactor to get rid of DRY code
+    // const buttons = document.querySelectorAll('.btn')
+    // const storeItems = document.querySelectorAll('.store-item')
+
+    // buttons.forEach((button)=> {
+    //     button.addEventListener('click', (e) => {
+    //         e.preventDefault()
+    //         const filter = e.target.dataset.filter
+            
+    //         storeItems.forEach((item)=> {
+    //             if (filter === 'all'){
+    //                 item.style.display = 'block'
+    //             } else {
+    //                 if (item.classList.contains(filter)){
+    //                     item.style.display = 'block'
+    //                 } else {
+    //                     item.style.display = 'none'
+    //                 }
+    //             }
+    //         })
+    //     })
+    // })
+
+})();
+
+//wire up filter search box
+// (function(){
+
+//     const searchBox = document.querySelector('#search-item')
+//     const storeItems = document.querySelectorAll('.store-item')
+
+//     searchBox.addEventListener('keyup', (e) => {
+    
+//         const searchFilter = e.target.value.toLowerCase().trim()
+//         //display only items that contain filter input
+
+//         storeItems.forEach((item) => {
+//             if (item.textContent.includes(searchFilter)){
+//                 item.style.display = 'block'
+//             } else {
+//                 item.style.display = 'none'
+//             }
+//         })
+//     })
+
+// })();
+
+
+

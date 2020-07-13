@@ -13,57 +13,113 @@ https://www.w3schools.com/howto/howto_js_filter_elements.asp -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    
+
     <title>Filter</title>
   </head>
   <body>
     <div id="container">
 
       <!-- Bem-vindo -->
-      <head>
+      <header>
         <h1 class="text-center">Bem-vindo a Auto Store</h1>
-        <button class="btn btn-outline-danger" type="button" onclick="window.open('https://www.w3schools.com/howto/howto_js_filter_elements.asp', 'https://github.com/romeojeremiah/Filter-Project')">Help!</button>
+        <button class="btn-outline-danger" type="button" onclick="window.open('https://www.w3schools.com/howto/howto_js_filter_elements.asp', 'https://github.com/romeojeremiah/Filter-Project')">Help!</button>
         <h4 class="text-right pr-4">Escolha o veículo que deseja comprar</h4>
-      </head>
+      </header>
 
       <!-- Botões de filtro -->
       <div class="row p-3 mt-5"> 
-        <button class="col-2 m-auto btn btn-outline-secondary">Todos</button>
-        <button class="col-2 m-auto btn btn-outline-secondary">Esportivos</button>
+        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="todos">todos</button>
+        <button class="col-2 m-auto btn btn-outline-secondary" data-filter="esportivo">Esportivos</button>
         <button class="col-2 m-auto btn btn-outline-secondary">Família</button>
         <button class="col-2 m-auto btn btn-outline-secondary">Velhos</button>
+        <button class="col-2 m-auto btn btn-outline-secondary">Teste</button>
       </div>
+
 
       <!-- Caixa de pesquisa -->
       <div class="input-group col-8 mx-auto mb-3"> 
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input id="CaixaDePesquisa" onkeyup="filtrar()" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
 
       <!-- Seção de carros -->
-      <section class="row">
-        <div class="card" style="width: 200px;">
-          Esportivo Camaro
+      <section id="secao" class="row m-2">
+
+        <div class="card m-2 store-item esportivo" style="width: 200px;">
+          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Camaro v8</h4>
+            </div>
+            <div class="card-text">
+              R$ 220.000,00
+            </div>
+          </div>
         </div>
+
   
-        <div class="card" style="width: 200px;">
+        <div class="card m-2 store-item esportivo" style="width: 200px;">
+          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Kombi</h4>
+            </div>
+            <div class="card-text">
+              R$ 20.000,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card m-2 store-item esportivo" style="width: 200px;">
+          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Camaro v8</h4>
+            </div>
+            <div class="card-text">
+              R$ 220.00,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card m-2 store-item esportivo" style="width: 200px;">
+          <img src="img01.jpeg" width="25px" class="card-img-top">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Camaro v8</h4>
+            </div>
+            <div class="card-text">
+              R$ 220.00,00
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="card store-item" style="width: 200px;">
           Velha Kombi
+          <a href="#">Kombi</a>
         </div>
   
-        <div class="card " style="width: 200px;">
+        <div class="card store-item" style="width: 200px;">
           Família Spin
         </div>
         
-      </section>
-
-
+      </section>     
+      
+      
 
 
     </div> <!-- /container -->
+   
 
 
-
+    <!-- Javsdcript -->
+    <script src="app.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
