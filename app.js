@@ -1,4 +1,4 @@
-// Work to get the filter buttons working
+// seleciona os carros pelos botões.
 (function(){
     // const buttons = document.querySelectorAll('.btn')
     // const storeItems = document.querySelectorAll('.store-item')
@@ -49,7 +49,7 @@
     //     })
     // })
 
-    // refactor to get rid of DRY code
+    // código refatorado para evitar a repetição de código.
     const buttons = document.querySelectorAll('.btn')
     const storeItems = document.querySelectorAll('.store-item')
 
@@ -74,27 +74,29 @@
 
 })();
 
-//wire up filter search box
-// (function(){
+// Caixa de Pesquisa
+(function(){
 
-//     const searchBox = document.querySelector('#search-item')
-//     const storeItems = document.querySelectorAll('.store-item')
+    const searchBox = document.querySelector('#CaixaDePesquisa');
+    const storeItems = document.querySelectorAll('.store-item');
 
-//     searchBox.addEventListener('keyup', (e) => {
+    // Pesquisa os carros na Caixa de Busca
+    searchBox.addEventListener('keyup', (e) => {
     
-//         const searchFilter = e.target.value.toLowerCase().trim()
-//         //display only items that contain filter input
+        // A variável searchFilter recebe o valor digitado na caixa de busca 
+        const searchFilter = e.target.value.toLowerCase().trim()
 
-//         storeItems.forEach((item) => {
-//             if (item.textContent.includes(searchFilter)){
-//                 item.style.display = 'block'
-//             } else {
-//                 item.style.display = 'none'
-//             }
-//         })
-//     })
+        // exibe os itens que têm as palavras correspondentes ao digitado na caixa de busca.
+        storeItems.forEach((item) => {
+            if (item.textContent.includes(searchFilter)){
+                item.style.display = 'block'
+            } else {
+                item.style.display = 'none'
+            }
+        })
+    })
 
-// })();
+})();
 
 
 
